@@ -44,7 +44,7 @@ describe('primus-spark-latency', function () {
     srv.listen(function () {
       primus.on('connection', function (spark) {
         spark.on('data', function (data) {
-          expect(spark.latency).to.be.below(30)
+          expect(spark.latency).to.be.within(0, 30)
           done()
         })
       })
