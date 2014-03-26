@@ -4,23 +4,19 @@ module.exports = {
     primus.Spark.writable('latency', 0)
 
     primus.transform('incoming', function (packet) {
-      if (packet.data.latency) {
-        this.latency = packet.data.latency
+      if (packet.data._latency) {
+        this.latency = packet.data._latency
         return false
-      } else {
-        return true
       }
     })
-
   },
 
   client: function (primus, options) {
-    primus.on('incoming::pong', function () {
-      primus.write({ latency: primus.latency })
-    })
+    primus.on('incoming::pong', sendLatency)
+    primus.on('incoming::open', sendLatency)
 
-    primus.on('incoming::open', function () {
-      primus.write({ latency: primus.latency })
-    })
+    function sendLatency() {
+      this.write({ _latency: this.latency })
+    }
   }
 }
