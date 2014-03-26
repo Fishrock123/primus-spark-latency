@@ -1,6 +1,6 @@
 {
   "name": "primus-spark-latency",
-  "description": "Spark.latency",
+  "description": "Adds a latency property to primus sparks server-side.",
   "version": "0.0.0",
   "engines": {
     "node": ">=0.10.0"

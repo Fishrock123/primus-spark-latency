@@ -1,8 +1,19 @@
 # primus-spark-latency [![Build Status](https://travis-ci.org/Fishrock123/primus-spark-latency.png)](https://travis-ci.org/Fishrock123/primus-spark-latency)
 
-Spark.latency
+Adds a `latency` property to [primus](https://github.com/primus/primus) sparks server-side.
+
+The property is set on connection, and on each subsequent ping.
 
 ## API
+
+```js
+var primus = require('primus')()
+  , latency = require('primus-spark-latency')
+
+primus.use('spark-latency', latency)
+```
+
+`spark.latency` - numeric value in milliseconds.
 
 
 ## License
