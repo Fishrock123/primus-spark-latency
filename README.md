@@ -4,8 +4,6 @@ Spark.latency
 
 ## API
 
-etc
-
 
 ## License
 
