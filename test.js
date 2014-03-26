@@ -48,9 +48,10 @@ describe('primus-spark-latency', function () {
           done()
         })
       })
-      setTimeout( function() {
-        client(srv, primus).write({ data: "cats" })
-      }, 200)
+      var other = client(srv, primus)
+      setTimeout(function() {
+        other.write({ data: "cats" })
+      }, 20)
     })
   })
 })
