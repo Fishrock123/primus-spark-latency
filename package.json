@@ -1,0 +1,36 @@
+{
+  "name": "primus-spark-latency",
+  "description": "Spark.latency",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "author": {
+    "name": "Jeremiah Senkpiel",
+    "email": "fishrock123@rocketmail.com",
+    "url": "https://searchbeam.jit.su",
+    "twitter": "https://twitter.com/fishrock123"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fishrock123/primus-spark-latency.git"
+  },
+  "bugs": {
+    "mail": "fishrock123@rocketmail",
+    "url": "https://github.com/fishrock123/primus-spark-latency/issues"
+  },
+  "keywords": [
+    "primus",
+    "latency"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "primus": "~2.1.0",
+    "expect.js": "~0.3.1",
+    "ws": "~0.4.31"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec test.js"
+  }
+}
