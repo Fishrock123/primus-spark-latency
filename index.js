@@ -1,7 +1,7 @@
 
 module.exports = {
   server: function (primus, options) {
-    primus.Spark.writable('latency', Infinity)
+    primus.Spark.writable('latency', 0)
 
     primus.transform('incoming', function (packet) {
       if (packet.data.latency) {
