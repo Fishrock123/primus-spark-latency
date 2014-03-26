@@ -44,12 +44,15 @@ describe('primus-spark-latency', function () {
     srv.listen(function () {
       primus.on('connection', function (spark) {
         spark.on('data', function (data) {
-          expect(spark.latency).to.be.within(0, 30)
+          expect(spark.latency).to.be.within(1, 30)
           done()
         })
       })
       client(srv, primus).on('open', function () {
-        this.write({ data: "cats" })
+        var that = this
+        process.nextTick(function () {
+          that.write({ data: "cats" })
+        })
       })
     })
   })
