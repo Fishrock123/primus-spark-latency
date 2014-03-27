@@ -1,4 +1,4 @@
-# primus-spark-latency [![Build Status](https://travis-ci.org/Fishrock123/primus-spark-latency.png)](https://travis-ci.org/Fishrock123/primus-spark-latency)
+# primus-spark-latency [![Build Status](https://travis-ci.org/Fishrock123/primus-spark-latency.png)](https://travis-ci.org/Fishrock123/primus-spark-latency) [![NPM version](https://badge.fury.io/js/primus-spark-latency.png)](http://badge.fury.io/js/primus-spark-latency)
 
 Adds a `latency` property to [primus](https://github.com/primus/primus) sparks server-side.
 
