@@ -57,7 +57,7 @@ describe('primus-spark-latency', function () {
     })
   })
 
-  it('Spark.latency should only be able to be set as a number', function (done) {
+  it('Ensuring packets cannot set Spark.latency as non-numeric', function (done) {
     srv.listen(function () {
       primus.on('connection', function (spark) {
         spark.on('data', function (data) {
