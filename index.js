@@ -4,8 +4,9 @@ module.exports = {
     primus.Spark.writable('latency', 0)
 
     primus.transform('incoming', function (packet) {
-      if (packet.data._latency) {
-        this.latency = packet.data._latency
+      var latency = packet.data._latency
+      if (latency && typeof latency == 'number') {
+        this.latency = latency
         return false
       }
     })
