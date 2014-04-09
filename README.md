@@ -6,14 +6,39 @@ The property is set on connection, and on each subsequent ping.
 
 ## API
 
+### spark.latency
+
+Numeric value (ms) of client latency.
+
 ```js
-var primus = require('primus')()
+var primus  = require('primus')()
   , latency = require('primus-spark-latency')
 
 primus.use('spark-latency', latency)
 ```
 
-`spark.latency` - numeric value in milliseconds.
+
+### spark.clock_offset (optional)
+
+###### Note: This was released in 0.1.1 / 56e6ea5, but was undocumented - See #1
+
+Numeric distance (ms) of the client's clock from the server clock.
+
+Disabled unless `Primus.options.use_clock_offset` is `true`.
+Must be enabled on both the server and browser.
+
+#### Server
+```js
+var primus  = require('primus')({ use_clock_offset: true })
+  , latency = require('primus-spark-latency')
+
+primus.use('spark-latency', latency)
+```
+
+#### Browser
+```js
+primus = new Primus(url, { use_clock_offset: true })
+```
 
 
 ## License
